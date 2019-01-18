@@ -34,7 +34,7 @@ function _echo() {
     if [[ -n "$LOG_TARGET" ]] ;then
         echo "$msg" | tee >> "$LOG_TARGET"
     else
-        echo "$msg"
+        echo "$msg" 1>&2
     fi
 }
 
@@ -69,7 +69,7 @@ function _CTX() {
 
     ctx=($ctx_name $ctx_type)
 
-    echo "${ctx[@]}"
+    echo "${ctx[@]}" 1>&2
 }
 
 
