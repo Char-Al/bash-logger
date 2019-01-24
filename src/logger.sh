@@ -69,7 +69,7 @@ function _CTX() {
 
     ctx=($ctx_name $ctx_type)
 
-    echo "${ctx[@]}" 1>&2
+    echo "${ctx[@]}"
 }
 
 
