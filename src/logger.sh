@@ -80,27 +80,39 @@ function _CTX() {
 function ENTER() {
     local ctx ctx_name date_time
     ctx=($(_CTX))
-    DEBUG "${ctx[1]}: ${ctx[0]}"
+    DEBUG "${ctx[1]}: ${ctx[0]}" $1
 }
 
 function EXIT() {
     local ctx date_time
     ctx=($(_CTX))
-    DEBUG "${ctx[1]}: ${ctx[0]}"
+    DEBUG "${ctx[1]}: ${ctx[0]}" $1
 }
 
 function DEBUG() {
-    _log "$1"
+	if [[ $2 -le 1 ]]
+	then
+    	_log "$1"
+	fi
 }
 
 function INFO() {
-    _log "$1"
+	if [[ $2 -le 2 ]]
+	then
+    	_log "$1"
+	fi
 }
 
 function WARN() {
-    _log "$1"
+	if [[ $2 -le 3 ]]
+	then
+    	_log "$1"
+	fi
 }
 
 function ERROR() {
-    _log "$1"
+	if [[ $2 -le 4 ]]
+	then
+    	_log "$1"
+	fi
 }
